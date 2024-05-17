@@ -19,9 +19,16 @@ async function getPeople(id: string){
 export default async function Page({ params }: {
     params: {id: string}
 }){
-    const Meet = await getPeople(params.idnp)
+
+
+interface people{
+    id: string
+    name: string
+}
+
+    const Meet = await getPeople(params.id)
     console.log(Meet)
-    let listofMoves = Meet.combos.map((item)=> <ComboWin key={item.id} combos={item}/>)
+    let listofMoves = Meet.combos.map((item:people)=> <ComboWin key={item.id} combos={item}/>)
     // console.log(Meet)
     return(
         <main className="flex flex-col">
