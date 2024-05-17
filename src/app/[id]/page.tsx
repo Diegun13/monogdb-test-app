@@ -2,7 +2,20 @@ import getCombos from "../api/getCombos"
 import People from "../_componets/testdata.js"
 import ComboWin from "../_componets/ComboWin"
 
+interface combos{
+    id: string
+    moves: string
+    isTrue: boolean
+    notes: string
+}
 
+interface people{
+    id: string
+    name: string
+    combos: Array<combos>
+    ids:string
+    img:string
+}
 
 
 // export async function generateStaticParams() {
@@ -21,19 +34,15 @@ export default async function Page({ params }: {
 }){
 
 
-interface people{
-    id: string
-    name: string
-}
 
-    const Meet = await getPeople(params.id)
-    console.log(Meet)
-    let listofMoves = Meet.combos.map((item:people)=> <ComboWin key={item.id} combos={item}/>)
+
+    const Meet:people = await getPeople(params.id)
+    let listofPeople = Meet.combos.map((item:combos)=> <ComboWin key={item.id} combos={item}/>)
     // console.log(Meet)
     return(
         <main className="flex flex-col">
             <h1>ID: {Meet.name}</h1>
-            {listofMoves? listofMoves : `notheing here for ${params.id}`}
+            {listofPeople? listofPeople : `notheing here for ${params.id}`}
         </main>
     )
 }
