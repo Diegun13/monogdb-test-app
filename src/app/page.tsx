@@ -22,7 +22,7 @@ interface people{
 }
 
   const res = await getCombos()
-  console.log(res)
+
 let people = res.map((item:people) => <CharWin key={item.ids} char={item}/>)
   
 // let messy = People.map((item) => <CharWin key={item._id} char={item}/>)
@@ -30,7 +30,9 @@ let people = res.map((item:people) => <CharWin key={item.ids} char={item}/>)
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {people}ssg
+      {people}
+      ssg
+      
     </main>
   );
 }

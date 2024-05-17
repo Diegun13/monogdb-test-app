@@ -38,7 +38,6 @@ export default async function Page({ params }: {
 
     const Meet:people = await getPeople(params.id)
     let listofPeople = Meet.combos.map((item:combos)=> <ComboWin key={item.id} combos={item}/>)
-    // console.log(Meet)
     return(
         <main className="flex flex-col">
             <h1>ID: {Meet.name}</h1>

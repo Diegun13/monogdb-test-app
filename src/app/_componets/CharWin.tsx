@@ -20,7 +20,6 @@ export default function CharWin ({ char}: {char:people}){
     
 
     // let stuff = char.combos.map((item)=> <ComboWin key={item.id} combos={item}/> )
-    // console.log(char)
     return(
         <>
         <main className="bg-slate-500 rounded-md border-4 border-red-400">
