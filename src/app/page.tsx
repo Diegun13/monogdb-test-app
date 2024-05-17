@@ -2,7 +2,7 @@ import connetDB from "./lib/connetDB.js"
 import getCombos from "./api/getCombos.js"
 import getCorMons from "./api/CorRoute.js"
 import mongoose from "mongoose"
-import CharWin from "./_componets/CharWin.tsx"
+import CharWin from "./_componets/CharWin"
 import People from "./_componets/testdata.js"
 export default async function Home() {
  
