@@ -1,4 +1,4 @@
-import connetDB from "../lib/connetDB"
+import connetDB from "../lib/connetDB.js"
 import CormonM from "../models/CormonM.ts"
 import { NextResponse } from "next/server"
 

@@ -14,7 +14,6 @@ interface people{
 }
 
 export default function ComboWin({combos}: {combos:combos}){
-    console.log(combos,"com")
     return(
         <>
         <p>moves: {combos.moves}</p>

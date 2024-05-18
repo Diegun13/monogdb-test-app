@@ -1,4 +1,4 @@
-import getCombos from "../api/getCombos"
+import getCombos from "../_componets/getCombos"
 import People from "../_componets/testdata.js"
 import ComboWin from "../_componets/ComboWin"
 
@@ -26,17 +26,21 @@ interface people{
 
 async function getPeople(id: string){
     const res = await getCombos()
-    return res[id]
+    let hash = new Map()
+    for(let i = 0; i < res.length; i++){
+        if(!hash.get(res[i].name)){
+            hash.set(res[i].name, i)
+        }
+    }
+    // console.log("hi",res[hash.get(id)])
+    return res[hash.get(id)]
 }
 
 export default async function Page({ params }: {
     params: {id: string}
 }){
-
-
-
-
-    const Meet:people = await getPeople(params.id)
+    const Meet:people = await getPeople((params.id))
+    console.log(Meet)
     let listofPeople = Meet.combos.map((item:combos)=> <ComboWin key={item.id} combos={item}/>)
     return(
         <main className="flex flex-col">

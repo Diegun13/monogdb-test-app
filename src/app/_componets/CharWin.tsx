@@ -23,7 +23,7 @@ export default function CharWin ({ char}: {char:people}){
     return(
         <>
         <main className="bg-slate-500 rounded-md border-4 border-red-400">
-        <Link href={`/${char.ids}`}>
+        <Link href={`/${char.name}`}>
             <p>{char.name}</p>
             
             
