@@ -18,11 +18,11 @@ interface people{
 }
 
 
-// export async function generateStaticParams() {
-//     const res = await getCombos()
-//     const iceMan = res.map((item)=> ( {id: item.ids}))
-// return [...iceMan]
-// }
+export async function generateStaticParams() {
+    const res = await getCombos()
+    const iceMan = res.map((item:people)=> ( {id: item.name}))
+return [...iceMan]
+}
 
 async function getPeople(id: string){
     const res = await getCombos()
